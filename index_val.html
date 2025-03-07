@@ -5,54 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La Magdalena - Història</title>
   <link rel="icon" href="maglogo.jpeg" type="image/x-icon">
-  <style>
-    /* Reset bàsic */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
+ <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
       line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
     }
-
-    /* Header i navegació */
+      /* Header y navegación */
     header {
       background: #16552b;
       color: #fff;
       padding: 20px;
     }
-
     header .container {
       max-width: 1100px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; /* Permet que s'ajuste en dispositius petits */
     }
-
     header h1 {
       font-size: 2em;
     }
-
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap; /* Ajusta els elements en dispositius petits */
     }
-
     nav ul li {
       margin-left: 20px;
     }
-
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
-
-    /* Secció de compte enrere */
+    /* Sección de cuenta atrás */
     #countdown {
       background: #fff;
       padding: 20px;
@@ -61,144 +50,63 @@
       text-align: center;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      color: #333;
+      color: #333; /* Forzamos un color oscuro para que se vea */
     }
-
     #countdown h2 {
       margin-bottom: 15px;
     }
-
     #timer {
       font-size: 1.5em;
     }
-
-    /* Secció Hero */
-    .hero {
-      background: url('gaiatas.jpg') no-repeat center center/cover;
-      height: 400px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero .overlay {
-      background: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-    }
-
-    .hero .content {
-      position: relative;
+    header {
+      background: #16552b;
       color: #fff;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .hero h2 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #e74c3c;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    /* Contenidor principal */
-    .container {
-      max-width: 1100px;
-      margin: auto;
       padding: 20px;
-    }
-
-    /* Secció Història */
-    .history {
-      margin: 40px 0;
-    }
-
-    .history h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #16552b;
-    }
-
-    .history p {
-      margin-bottom: 20px;
-      text-align: justify;
-    }
-
-    .history img {
-      max-width: 100%;
+      text-align: center;
       border-radius: 8px;
       margin-bottom: 20px;
     }
-
-    /* Footer */
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    section#programa {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    details {
+      background: #fff;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    details summary {
+      font-size: 1.5em;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px;
+    }
+    pre {
+      white-space: pre-wrap;       /* Permite el ajuste de línea */
+      word-wrap: break-word;
+      overflow-x: auto;            /* Agrega scrollbar horizontal si es necesario */
+      max-width: 100%;             /* Limita el ancho al 100% del contenedor */
+      font-family: inherit;
+      margin-top: 10px;
+    }
     footer {
-      background: #333;
-      color: #fff;
       text-align: center;
-      padding: 10px;
+      margin-top: 40px;
+      color: #555;
+      font-size: 0.9em;
     }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-      header .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 1.5em;
-      }
-
-      nav ul {
-        justify-content: center;
-        padding-top: 10px;
-      }
-
-      nav ul li {
-        margin-left: 10px;
-      }
-
-      .hero h2 {
-        font-size: 2.5em;
-      }
-
-      .hero p {
-        font-size: 1em;
-      }
-
-      .history h2 {
-        font-size: 1.5em;
-      }
-
-      .btn {
-        font-size: 0.9em;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h2 {
-        font-size: 2em;
-      }
-
-      .btn {
-        padding: 8px 15px;
-      }
+    footer a {
+      color: #e74c3c;
+      text-decoration: none;
     }
   </style>
+
 </head>
 <body>
 <header>
