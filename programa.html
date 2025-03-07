@@ -6,7 +6,7 @@
   <title>Programación - La Magdalena</title>
   <link rel="icon" href="maglogo.jpeg" type="image/x-icon">
   <style>
-   /* Reset básico */
+/* Reset básico */
 * { 
   box-sizing: border-box; 
   margin: 0; 
@@ -18,8 +18,8 @@ body {
   line-height: 1.6;
   background: #f4f4f4;
   color: #333;
-  margin: 0; /* Asegura que no haya márgenes extra */
-  padding: 0; /* Evita espacios innecesarios */
+  margin: 0; 
+  padding: 0; 
 }
 
 /* Header y navegación */
@@ -39,7 +39,7 @@ header .container {
 }
 
 header h1 {
-  font-size: 2.5em; /* Aumenta un poco el tamaño del título */
+  font-size: 2.5em;
 }
 
 nav ul {
@@ -82,28 +82,28 @@ nav ul li a {
 }
 
 .hero h2 {
-  font-size: 3.5em; /* Aumenta el tamaño del texto para hacerlo más destacado */
+  font-size: 3.5em;
   margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 1.4em; /* Aumenta el tamaño del párrafo */
+  font-size: 1.4em;
 }
 
 .btn {
   display: inline-block;
   background: #e74c3c;
   color: #fff;
-  padding: 12px 25px; /* Aumenta el tamaño del botón */
+  padding: 12px 25px;
   text-decoration: none;
   border-radius: 5px;
   margin-top: 20px;
   font-weight: bold;
-  transition: background 0.3s ease; /* Agrega una transición para el hover */
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
-  background: #c0392b; /* Cambia el color del botón cuando pasa el mouse */
+  background: #c0392b;
 }
 
 /* Contenedor principal */
@@ -111,9 +111,9 @@ nav ul li a {
   max-width: 1100px;
   margin: auto;
   padding: 20px;
-  background: #fff; /* Fondo blanco para el contenedor */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para un efecto de profundidad */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Sección de la programación */
@@ -122,7 +122,7 @@ nav ul li a {
 }
 
 .programacion h2 {
-  font-size: 2.5em; /* Aumenta el tamaño de los encabezados */
+  font-size: 2.5em;
   margin-bottom: 20px;
   color: #16552b;
 }
@@ -138,21 +138,22 @@ nav ul li a {
   padding: 20px; /* Aumenta el relleno para más espacio */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease-in-out; /* Efecto de hover */
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #ddd; /* Añade un borde gris suave */
 }
 
 .programacion li:hover {
-  transform: translateY(-5px); /* Levanta un poco el elemento al pasar el mouse */
+  transform: translateY(-5px);
 }
 
 .programacion li h3 {
-  font-size: 1.8em; /* Tamaño del encabezado más grande */
+  font-size: 1.8em;
   color: #16552b;
 }
 
 .programacion li p {
   margin: 5px 0;
-  font-size: 1.1em; /* Aumenta el tamaño de los párrafos */
+  font-size: 1.1em;
   color: #555;
 }
 
@@ -162,7 +163,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px;
-  position: fixed; /* Hace que el footer siempre esté visible al pie */
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -202,6 +203,11 @@ footer {
   .btn {
     font-size: 1em;
   }
+
+  /* Ajustar los recuadros de la programación */
+  .programacion li {
+    padding: 15px; /* Menos espacio interno en dispositivos más pequeños */
+  }
 }
 
 @media (max-width: 480px) {
@@ -214,11 +220,10 @@ footer {
   }
 
   footer {
-    padding: 15px; /* Añade más espacio en dispositivos pequeños */
+    padding: 15px;
   }
 }
 
-  </style>
   
 </head>
 <body>
