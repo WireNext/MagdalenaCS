@@ -6,189 +6,218 @@
   <title>Programación - La Magdalena</title>
   <link rel="icon" href="maglogo.jpeg" type="image/x-icon">
   <style>
-    /* Reset básico */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+   /* Reset básico */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f4f4f4;
-      color: #333;
-    }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0; /* Asegura que no haya márgenes extra */
+  padding: 0; /* Evita espacios innecesarios */
+}
 
-    /* Header y navegación */
-    header {
-      background: #16552b;
-      color: #fff;
-      padding: 20px;
-    }
+/* Header y navegación */
+header {
+  background: #16552b;
+  color: #fff;
+  padding: 20px 0; /* Agrega un relleno superior e inferior para más espacio */
+}
 
-    header .container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; /* Permite que se ajuste en dispositivos pequeños */
-    }
+header .container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que se ajuste en dispositivos pequeños */
+}
 
-    header h1 {
-      font-size: 2em;
-    }
+header h1 {
+  font-size: 2.5em; /* Aumenta un poco el tamaño del título */
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap; /* Ajusta los elementos en dispositivos pequeños */
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* Ajusta los elementos en dispositivos pequeños */
+}
 
-    nav ul li {
-      margin-left: 20px;
-    }
+nav ul li {
+  margin-left: 20px;
+}
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    /* Sección Hero */
-    .hero {
-      background: url('gaiatas.jpg') no-repeat center center/cover;
-      height: 400px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+/* Sección Hero */
+.hero {
+  background: url('gaiatas.jpg') no-repeat center center/cover;
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .hero .overlay {
-      background: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-    }
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
 
-    .hero .content {
-      position: relative;
-      color: #fff;
-      text-align: center;
-      z-index: 1;
-    }
+.hero .content {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
 
-    .hero h2 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
+.hero h2 {
+  font-size: 3.5em; /* Aumenta el tamaño del texto para hacerlo más destacado */
+  margin-bottom: 10px;
+}
 
-    .hero p {
-      font-size: 1.2em;
-    }
+.hero p {
+  font-size: 1.4em; /* Aumenta el tamaño del párrafo */
+}
 
-    .btn {
-      display: inline-block;
-      background: #e74c3c;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
+.btn {
+  display: inline-block;
+  background: #e74c3c;
+  color: #fff;
+  padding: 12px 25px; /* Aumenta el tamaño del botón */
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease; /* Agrega una transición para el hover */
+}
 
-    /* Contenedor principal */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
+.btn:hover {
+  background: #c0392b; /* Cambia el color del botón cuando pasa el mouse */
+}
 
-    /* Sección de la programación */
-    .programacion {
-      margin: 40px 0;
-    }
+/* Contenedor principal */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  background: #fff; /* Fondo blanco para el contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para un efecto de profundidad */
+}
 
-    .programacion h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #16552b;
-    }
+/* Sección de la programación */
+.programacion {
+  margin: 40px 0;
+}
 
-    .programacion ul {
-      list-style: none;
-      padding: 0;
-    }
+.programacion h2 {
+  font-size: 2.5em; /* Aumenta el tamaño de los encabezados */
+  margin-bottom: 20px;
+  color: #16552b;
+}
 
-    .programacion li {
-      background: #fff;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+.programacion ul {
+  list-style: none;
+  padding: 0;
+}
 
-    .programacion li h3 {
-      font-size: 1.5em;
-      color: #16552b;
-    }
+.programacion li {
+  background: #fff;
+  margin: 10px 0;
+  padding: 20px; /* Aumenta el relleno para más espacio */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out; /* Efecto de hover */
+}
 
-    .programacion li p {
-      margin: 5px 0;
-    }
+.programacion li:hover {
+  transform: translateY(-5px); /* Levanta un poco el elemento al pasar el mouse */
+}
 
-    /* Footer */
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
+.programacion li h3 {
+  font-size: 1.8em; /* Tamaño del encabezado más grande */
+  color: #16552b;
+}
 
-    /* Media Queries */
-    @media (max-width: 768px) {
-      header .container {
-        flex-direction: column;
-        text-align: center;
-      }
+.programacion li p {
+  margin: 5px 0;
+  font-size: 1.1em; /* Aumenta el tamaño de los párrafos */
+  color: #555;
+}
 
-      header h1 {
-        font-size: 1.5em;
-      }
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed; /* Hace que el footer siempre esté visible al pie */
+  bottom: 0;
+  width: 100%;
+}
 
-      nav ul {
-        justify-content: center;
-        padding-top: 10px;
-      }
+/* Media Queries */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-      nav ul li {
-        margin-left: 10px;
-      }
+  header h1 {
+    font-size: 1.8em;
+  }
 
-      .hero h2 {
-        font-size: 2.5em;
-      }
+  nav ul {
+    justify-content: center;
+    padding-top: 10px;
+  }
 
-      .hero p {
-        font-size: 1em;
-      }
+  nav ul li {
+    margin-left: 10px;
+  }
 
-      .programacion h2 {
-        font-size: 1.5em;
-      }
+  .hero h2 {
+    font-size: 2.8em;
+  }
 
-      .btn {
-        font-size: 0.9em;
-      }
-    }
+  .hero p {
+    font-size: 1.1em;
+  }
 
-    @media (max-width: 480px) {
-      .hero h2 {
-        font-size: 2em;
-      }
+  .programacion h2 {
+    font-size: 2em;
+  }
 
-      .btn {
-        padding: 8px 15px;
-      }
-    }
+  .btn {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 2.2em;
+  }
+
+  .btn {
+    padding: 10px 18px;
+  }
+
+  footer {
+    padding: 15px; /* Añade más espacio en dispositivos pequeños */
+  }
+}
+
   </style>
   
 </head>
