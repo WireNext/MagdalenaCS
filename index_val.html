@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Magdalena - Història</title>
+  <link rel="icon" href="maglogo.jpeg" type="image/x-icon">
+  <style>
+    /* Reset bàsic */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header i navegació */
+    header {
+      background: #16552b;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header .container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Permet que s'ajuste en dispositius petits */
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap; /* Ajusta els elements en dispositius petits */
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Secció de compte enrere */
+    #countdown {
+      background: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      color: #333;
+    }
+
+    #countdown h2 {
+      margin-bottom: 15px;
+    }
+
+    #timer {
+      font-size: 1.5em;
+    }
+
+    /* Secció Hero */
+    .hero {
+      background: url('gaiatas.jpg') no-repeat center center/cover;
+      height: 400px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+    }
+
+    .hero .content {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e74c3c;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    /* Contenidor principal */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Secció Història */
+    .history {
+      margin: 40px 0;
+    }
+
+    .history h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #16552b;
+    }
+
+    .history p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .history img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      nav ul {
+        justify-content: center;
+        padding-top: 10px;
+      }
+
+      nav ul li {
+        margin-left: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .history h2 {
+        font-size: 1.5em;
+      }
+
+      .btn {
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+
+      .btn {
+        padding: 8px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Magdalena 2025</h1>
+      <nav>
+        <ul>
+          <li><a href="#historia">Història</a></li>
+          <li><a href="programa.html">Programació</a></li>
+          <!-- Enllaços per canviar d'idioma -->
+          <li><a href="?lang=es">Castellano</a></li>
+          <li><a href="?lang=ca">Valencià</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Secció Hero -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Descobreix la nostra història</h2>
+      <p>Conoce l'origen i la tradició de les Festes de la Magdalena</p>
+      <!-- Secció de compte enrere dins del Hero -->
+      <section id="countdown">
+        <h2>Compte enrere per a l'inici</h2>
+        <div id="timer">
+          <span id="days"></span> dies 
+          <span id="hours"></span> hores 
+          <span id="minutes"></span> minuts 
+          <span id="seconds"></span> segons
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Contingut principal -->
+  <div class="container">
+    <section id="historia" class="history">
+      <h2>Què són les Festes de la Magdalena?</h2>
+      <img src="historia.jpg" alt="Història de la Magdalena">
+      <p>
+        Les Festes de la Magdalena són una celebració emblemàtica que rendeix homenatge a les tradicions i els orígens de Castelló de la Plana. Aquestes festes, que es realitzen anualment, revifen actes culturals i religiosos que han perdurat al llarg dels anys, com la Romeria de les Canyes, el Pregó, el Desfilada de Gaiates, i molts altres esdeveniments que capturen l'essència de la ciutat.
+      </p>
+      <p>
+        La Magdalena commemora el trasllat de la ciutat des de la colina de la Magdalena fins al fèrtil litoral l'any 1251. Aquesta festivitat, profundament arrelada en la cultura local, se celebra el tercer dissabte de Cuaresma, unint els castellonencs i visitants en una experiència vibrant i acolorida.
+      </p>
+      <p>
+        Durant aquestes festes, Castelló es omple de música, danses, i activitats per a totes les edats. Des de la tradicional desfilada de gaiates, on les impressionants estructures il·luminades recorren els carrers, fins a les diferents activitats lúdiques i gastronòmiques que reflecteixen la riquesa de la cultura castellonenca, cada dia ofereix noves oportunitats per gaudir.
+      </p>
+      <h3>Quan es celebra la Magdalena?</h3>
+      <p>
+        La Magdalena 2025 se celebrarà del 22 al 30 de març del 2025. Les festes fundacionals de Castelló tenen una duració total de 9 dies, des del dissabte previ a la romeria fins al diumenge següent.
+      </p>
+      <a href="programa.html" class="btn">Veure Programació d'Actes</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>© WireNext 2025 - Tots els drets reservats.</p>
+  </footer>
+
+  <!-- JavaScript per a la compte enrere -->
+  <script>
+    // Data d'inici de les festes: 22 de març de 2025 (ajusta l'hora si és necessari)
+    const eventDate = new Date("March 22, 2025 00:00:00").getTime();
+
+    const timerFunction = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      // Càlculs per a dies, hores, minuts i segons
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Actualitzar el HTML
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      // Si es supera la data de l'esdeveniment, mostra un missatge
+      if (distance < 0) {
+        clearInterval(timerFunction);
+        document.getElementById("timer").innerText = "¡Ja han començat les festes!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
