@@ -5,25 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La Magdalena - Historia</title>
   <link rel="icon" href="maglogo.jpeg" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Ocupar toda la pantalla */
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    #countdown {
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    #timer {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
+</head>
 <body>
-        <section id="countdown">
-        <h2>
-        <div id="timer">
-          <span id="days"></span> días 
-          <span id="hours"></span> horas 
-          <span id="minutes"></span> minutos 
-          <span id="seconds"></span> segundos
-        </div>
-        </h2>
-      </section>
+  <section id="countdown">
+    <h2>
+    <div id="timer">
+      <span id="days"></span> días 
+      <span id="hours"></span> horas 
+      <span id="minutes"></span> minutos 
+      <span id="seconds"></span> segundos
     </div>
-  <img src="ruedas.gif">
-  <p>
-    Estem possant la web a punt per a la magdalena de 2026
-  </p>
-  <!-- JavaScript para la cuenta atrás -->
+    </h2>
+  </section>
+
+  <img src="ruedas.gif" alt="Animación de ruedas">
+
+  <p>Estem possant la web a punt per a la Magdalena de 2026</p>
+
   <script>
-    // Fecha de inicio de las fiestas: 22 de marzo de 2025 (ajusta la hora si es necesario)
+    // Fecha de inicio de las fiestas: 7 de marzo de 2026
     const eventDate = new Date("March 7, 2026 00:00:00").getTime();
 
     const timerFunction = setInterval(function() {
