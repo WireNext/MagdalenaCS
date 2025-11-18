@@ -1,0 +1,227 @@
+/* =======================================
+   Archivo estil.css - Estilos Modernizados
+   ======================================= */
+
+/* Variables de Color */
+:root {
+  --color-primary: #16552b; /* Verde Oscuro Principal */
+  --color-secondary: #9fe3b1; /* Verde Claro/Acento */
+  --color-background: #f0f2f5; /* Fondo más suave */
+  --color-text-dark: #333333;
+  --color-text-light: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-red-accent: #e74c3c; /* Para enlaces en footer */
+}
+
+/* Base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--color-background);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header y Navegación */
+header {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 15px 0;
+  box-shadow: 0 4px 6px var(--color-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 2.2em;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+nav ul li {
+  margin-left: 25px;
+}
+nav ul li a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light);
+}
+
+/* Sección de Cuenta Atrás */
+#countdown {
+  background: var(--color-text-light);
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 700px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px var(--color-shadow);
+  border-left: 5px solid var(--color-secondary);
+}
+#countdown h2 {
+  font-size: 1.8em;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+#timer {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--color-red-accent);
+}
+#timer span {
+  display: inline-block;
+  min-width: 40px;
+}
+
+/* Sección del Programa */
+section#programa {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 0 10px;
+}
+details {
+  background: var(--color-text-light);
+  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--color-shadow);
+  border-left: 5px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+details:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+details summary {
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 15px 20px;
+  outline: none;
+  color: var(--color-primary);
+  transition: color 0.3s;
+}
+details[open] summary {
+  color: var(--color-red-accent);
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+  max-width: 100%;
+  font-family: inherit;
+  margin: 10px 0 0;
+  padding: 10px 20px 20px;
+  border-top: 1px dashed var(--color-secondary);
+}
+pre li {
+    list-style: none; /* Quitar el punto/viñeta del li */
+    padding: 8px 0;
+    border-bottom: 1px dotted #e0e0e0;
+}
+pre li:last-child {
+    border-bottom: none;
+}
+
+/* Estilo del botón de mapa (solo en programa_cs.html) */
+.map-button {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 4px 10px;
+    background-color: #007bff;
+    color: var(--color-text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: normal;
+    transition: background-color 0.3s;
+}
+.map-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  color: var(--color-text-dark);
+  font-size: 0.9em;
+  background-color: var(--color-background);
+  border-top: 1px solid #e0e0e0;
+}
+footer a {
+  color: var(--color-red-accent);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: var(--color-primary);
+}
+
+/* =======================================
+   Estilos específicos para INDEX.HTML (Página de "en construcción")
+   ======================================= */
+
+body.construction-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary); /* Fondo oscuro en la página de espera */
+  color: var(--color-text-light);
+}
+
+body.construction-page #countdown {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-light);
+    box-shadow: none;
+    border: 2px solid var(--color-secondary);
+}
+
+body.construction-page #countdown h2 {
+    color: var(--color-secondary);
+}
+
+body.construction-page #timer {
+    color: var(--color-secondary);
+}
+
+body.construction-page img {
+  max-width: 200px;
+  margin: 30px 0;
+  border-radius: 50%; /* Dar un toque más moderno a la imagen si es cuadrada */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+body.construction-page p {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
