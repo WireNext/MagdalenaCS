@@ -103,12 +103,11 @@
       document.getElementById("minutes").innerText = minutes;
       document.getElementById("seconds").innerText = seconds;
 
-      // Si se supera la fecha del evento, muestra un mensaje
       if (distance < 0) {
-        clearInterval(timerFunction);
-        document.getElementById("timer").innerText = "¡Ya han comenzado las fiestas!";
-      }
-    }, 1000);
+              clearInterval(timerFunction);
+              document.getElementById("countdown").style.display = "none"; // Desaparece el bloque
+            }
+          }, 1000);
   </script>
 </body>
 </html>

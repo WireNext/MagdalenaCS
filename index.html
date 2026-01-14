@@ -51,7 +51,7 @@
 <section class="hero-home">
     <h2>Benvinguts a la Guia de la Magdalena 2026</h2>
     <p>Tota la informació sobre les festes de Castelló al teu abast.</p>
-    <a href="inici.html" class="btn-principal">Consultar Programació</a>
+    <a href="programa.html" class="btn-principal">Consultar Programació</a>
 </section>
 
 <section id="countdown">
@@ -79,10 +79,17 @@
 </footer>
 
 <script>
-    const eventDate = new Date("March 7, 2026 00:00:00").getTime();
-    setInterval(function() {
+const eventDate = new Date("March 7, 2026 00:00:00").getTime(); // He corregit l'any a 2026
+    const timerFunction = setInterval(function() {
       const now = new Date().getTime();
       const distance = eventDate - now;
+      
+      if (distance < 0) {
+        clearInterval(timerFunction);
+        document.getElementById("countdown").style.display = "none"; // Amaga tot el bloc
+        return;
+      }
+
       document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
       document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));

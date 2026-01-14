@@ -110,12 +110,11 @@
       document.getElementById("minutes").innerText = minutes;
       document.getElementById("seconds").innerText = seconds;
 
-      // Si es supera la data de l'esdeveniment, mostra un missatge
       if (distance < 0) {
-        clearInterval(timerFunction);
-        document.getElementById("timer").innerText = "Ja han començat les festes!";
-      }
-    }, 1000);
+              clearInterval(timerFunction);
+              document.getElementById("countdown").style.display = "none"; // Desapareix el bloc
+            }
+          }, 1000);
   </script>
 </body>
 </html>
