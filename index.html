@@ -79,14 +79,14 @@
 </footer>
 
 <script>
-const eventDate = new Date("March 7, 2026 00:00:00").getTime(); // He corregit l'any a 2026
+const eventDate = new Date("March 7, 2025 00:00:00").getTime();
     const timerFunction = setInterval(function() {
       const now = new Date().getTime();
       const distance = eventDate - now;
       
       if (distance < 0) {
         clearInterval(timerFunction);
-        document.getElementById("countdown").style.display = "none"; // Amaga tot el bloc
+        document.getElementById("countdown").style.display = "none";
         return;
       }
 
