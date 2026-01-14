@@ -1,90 +1,91 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MAGDALENA VITOL!🔥🧨</title>
+  <title>Magdalena 2026 - Guia i Programació de les Festes</title>
   <link rel="icon" href="maglogo.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="estil.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh; /* Ocupar toda la pantalla */
+    .hero-home {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fondo.jpg');
+      background-size: cover;
+      color: white;
+      padding: 60px 20px;
       text-align: center;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
     }
-
-    #countdown {
-      margin-bottom: 20px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    #timer {
-      font-size: 1.5em;
+    .btn-principal {
+      display: inline-block;
+      background-color: var(--color-secondary);
+      color: var(--color-primary);
+      padding: 15px 30px;
+      text-decoration: none;
       font-weight: bold;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    .intro-text {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.8;
     }
   </style>
 </head>
 <body>
-  <section id="countdown">
-    <h2>
+<header>
+  <div class="container">
+    <h1>Magdalena 2026</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="programa.html">Programa</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-home">
+    <h2>Benvinguts a la Guia de la Magdalena 2026</h2>
+    <p>Tota la informació sobre les festes de Castelló al teu abast.</p>
+    <a href="inici.html" class="btn-principal">Consultar Programació</a>
+</section>
+
+<section id="countdown">
+    <h2>Compte enrere per al "Vitol!"</h2>
     <div id="timer">
-      <span id="days"></span> días 
-      <span id="hours"></span> horas 
-      <span id="minutes"></span> minutos 
-      <span id="seconds"></span> segundos
+      <span id="days"></span> d <span id="hours"></span> h <span id="minutes"></span> m <span id="seconds"></span> s
     </div>
-    </h2>
-  </section>
+</section>
 
-  <img src="ruedas.gif" alt="Animación de ruedas">
+<article class="intro-text">
+    <h2>Sobre les Festes de la Magdalena</h2>
+    <p>Les Festes de la Magdalena són les festes majors de <strong>Castelló de la Plana</strong>. Durant nou dies, la ciutat commemora els seus orígens amb una barreja única de tradició, llum i pólvora.</p>
+    <p>En aquesta web trobaràs la programació detallada, des de la Romeria de les Canyes fins a les millors mascletaes i la desfilada de Gaiates. <em>Nota: Actualment mostrem la programació de referència fins a la publicació oficial de l'Ajuntament.</em></p>
+</article>
 
-  <p>Estem possant la web a punt per a la Magdalena de 2026</p>
+<footer>
+  <div class="container">
+    <p>© WireNext 2026 - Guia no oficial de la Magdalena</p>
+    <nav>
+        <a href="privacitat.html">Privacitat</a> | 
+        <a href="cookies.html">Cookies</a> | 
+        <a href="avis-legal.html">Avís Legal</a>
+    </nav>
+  </div>
+</footer>
 
-  <script>
-    // Fecha de inicio de las fiestas: 7 de marzo de 2026
+<script>
     const eventDate = new Date("March 7, 2026 00:00:00").getTime();
-
-    const timerFunction = setInterval(function() {
+    setInterval(function() {
       const now = new Date().getTime();
       const distance = eventDate - now;
-
-      // Cálculos para días, horas, minutos y segundos
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Actualizar el HTML
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
-
-      // Si se supera la fecha del evento, muestra un mensaje
-      if (distance < 0) {
-        clearInterval(timerFunction);
-        document.getElementById("timer").innerText = "¡Ya han comenzado las fiestas!";
-      }
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
     }, 1000);
-  </script>
+</script>
 </body>
 </html>
