@@ -23,6 +23,11 @@
   <div class="hero">
       </div>
 
+<!--    <div id="aviso-lluvia">
+    ⚠️ A causa de las lluvias, algunos actos podrian ser cancelados o pospuestos. Consulta los canales oficiales para más información.
+    <button id="tancar-banner">✖</button>
+  </div>-->
+
   <section id="countdown">
     <h2>Cuenta Atrás para el Inicio</h2>
     <div id="timer">
@@ -104,10 +109,15 @@
       document.getElementById("seconds").innerText = seconds;
 
       if (distance < 0) {
-              clearInterval(timerFunction);
-              document.getElementById("countdown").style.display = "none"; // Desaparece el bloque
-            }
-          }, 1000);
+        clearInterval(timerFunction);
+        document.getElementById("countdown").style.display = "none"; // Desaparece el bloque
+        }
+      }, 1000);
+
+    document.getElementById('tancar-banner').addEventListener('click', function() {
+    document.getElementById('aviso-lluvia').style.display = 'none';
+});
+
   </script>
 </body>
 </html>

@@ -23,6 +23,10 @@
   
   <div class="hero">
       </div>
+  <div id="aviso-lluvia">
+    ⚠️ A causa de les pluges, alguns actes podrien ser cancel·lats o ajornats. Consulta els canals oficials per a més informació.
+    <button id="tancar-banner">✖</button>
+  </div>
 
   <section id="countdown">
     <h2>Compte enrere per a l'inici</h2>
@@ -115,6 +119,10 @@
               document.getElementById("countdown").style.display = "none"; // Desapareix el bloc
             }
           }, 1000);
+    document.getElementById('tancar-banner').addEventListener('click', function() {
+    document.getElementById('aviso-lluvia').style.display = 'none';
+});
+
   </script>
 </body>
 </html>
