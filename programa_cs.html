@@ -261,60 +261,57 @@
 </footer>
   
   <script>
-    // Fecha de inicio de las fiestas: 22 de marzo de 2025 (ajusta la hora si es necesario)
-    const eventDate = new Date("March 7, 2026 00:00:00").getTime();
+  // 1. Cuenta atrás
+  const eventDate = new Date("March 7, 2026 00:00:00").getTime();
 
-    const timerFunction = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
+  const timerFunction = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
 
-      // Cálculos para días, horas, minutos y segundos
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Actualizar el HTML
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
-
-      if (distance < 0) {
-        clearInterval(timerFunction);
-        document.getElementById("countdown").style.display = "none"; // Desaparece el bloque
-        }
-      }, 1000);
-
-    document.getElementById('tancar-banner').addEventListener('click', function() {
-    document.getElementById('aviso-lluvia').style.display = 'none';
-    document.addEventListener("DOMContentLoaded", function() {
-  const hoy = new Date();
-  const diaMes = hoy.getDate();
-  const mes = hoy.getMonth(); // 2 es Marzo
-
-  // Solo actuamos si estamos en Marzo (mes 2)
-  if (mes === 2) {
-    // Obtenemos todos los elementos <details> del programa
-    const secciones = document.querySelectorAll("#programa details");
-    
-    // Mapeo de días de la Magdalena 2026 (del 7 al 15 de marzo)
-    // El índice 0 corresponde al primer <details> (7 de marzo), etc.
-    const diasMagdalena = [7, 8, 9, 10, 11, 12, 13, 14, 15];
-    
-    const indiceDia = diasMagdalena.indexOf(diaMes);
-
-    // Si el día de hoy está en la lista, abrimos ese <details>
-    if (indiceDia !== -1 && secciones[indiceDia]) {
-      secciones[indiceDia].setAttribute("open", "");
-      
-      // Opcional: Desplazar la pantalla suavemente hasta el día abierto
-      secciones[indiceDia].scrollIntoView({ behavior: 'smooth' });
+    if (distance < 0) {
+      clearInterval(timerFunction);
+      const cd = document.getElementById("countdown");
+      if(cd) cd.style.display = "none";
+      return;
     }
-  }
-});
-});
 
-  </script>
+    document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+  }, 1000);
+
+  // 2. Lógica del Banner (con protección por si está comentado)
+  const btnTancar = document.getElementById('tancar-banner');
+  if (btnTancar) {
+    btnTancar.addEventListener('click', function() {
+      const banner = document.getElementById('aviso-lluvia');
+      if (banner) banner.style.display = 'none';
+      document.body.classList.remove('con-aviso');
+    });
+  }
+
+  // 3. Abrir día actual automáticamente
+  document.addEventListener("DOMContentLoaded", function() {
+    const hoy = new Date();
+    const diaMes = hoy.getDate();
+    const mes = hoy.getMonth(); // 2 es Marzo
+
+    if (mes === 2) {
+      const secciones = document.querySelectorAll("#programa details");
+      const diasMagdalena = [7, 8, 9, 10, 11, 12, 13, 14, 15];
+      const indiceDia = diasMagdalena.indexOf(diaMes);
+
+      if (indiceDia !== -1 && secciones[indiceDia]) {
+        secciones[indiceDia].setAttribute("open", "");
+        // Esperamos un poco para el scroll por si la página aún carga
+        setTimeout(() => {
+          secciones[indiceDia].scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+      }
+    }
+  });
+</script>
+
 </body>
 </html>

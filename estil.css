@@ -23,6 +23,17 @@ body {
   color: var(--color-text-dark);
 }
 
+/* 💡 Clase dinámica: Solo añade espacio si el body tiene esta clase */
+body.con-aviso {
+  padding-top: 60px;
+}
+
+@media (max-width: 600px) {
+  body.con-aviso {
+    padding-top: 55px; 
+  }
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
@@ -139,7 +150,7 @@ pre {
   border-top: 1px dashed var(--color-secondary);
 }
 pre li {
-    list-style: none; /* Quitar el punto/viñeta del li */
+    list-style: none;
     padding: 8px 0;
     border-bottom: 1px dotted #e0e0e0;
 }
@@ -147,7 +158,7 @@ pre li:last-child {
     border-bottom: none;
 }
 
-/* Estilo del botón de mapa (solo en programa_cs.html) */
+/* Estilo del botón de mapa */
 .map-button {
     display: inline-block;
     margin-left: 15px;
@@ -184,17 +195,14 @@ footer a:hover {
   color: var(--color-primary);
 }
 
-/* =======================================
-   Estilos específicos para INDEX.HTML (Página de "en construcción")
-   ======================================= */
-
+/* Construcción */
 body.construction-page {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-primary); /* Fondo oscuro en la página de espera */
+  background-color: var(--color-primary);
   color: var(--color-text-light);
 }
 
@@ -205,18 +213,13 @@ body.construction-page #countdown {
     border: 2px solid var(--color-secondary);
 }
 
-body.construction-page #countdown h2 {
-    color: var(--color-secondary);
-}
-
-body.construction-page #timer {
-    color: var(--color-secondary);
-}
+body.construction-page #countdown h2 { color: var(--color-secondary); }
+body.construction-page #timer { color: var(--color-secondary); }
 
 body.construction-page img {
   max-width: 200px;
   margin: 30px 0;
-  border-radius: 50%; /* Dar un toque más moderno a la imagen si es cuadrada */
+  border-radius: 50%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -232,7 +235,7 @@ body.construction-page p {
   color: #333;
   text-align: center;
   padding: 15px 50px; 
-  font-size: 1.05em;*/
+  font-size: 1.05em;
   font-weight: 500;
   position: fixed;
   top: 0;
@@ -240,7 +243,7 @@ body.construction-page p {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  display: flex; /* Mantiene la alineación en escritorio */
+  display: flex;
   align-items: center;
   justify-content: center;
   animation: deslizar 0.6s ease;
@@ -248,14 +251,12 @@ body.construction-page p {
   height: auto; 
 }
 
-/* ⚠️ NUEVO ESTILO: Contenedor interno para forzar el ajuste del texto */
 .aviso-contenido-wrapper {
-    flex-grow: 1; /* Permite que el contenido ocupe el espacio */
-    min-width: 0; /* IMPEDIRÁ EL DESBORDAMIENTO del texto largo */
-    padding-right: 15px; /* Pequeño espacio entre el texto y el botón en escritorio */
+    flex-grow: 1;
+    min-width: 0;
+    padding-right: 15px;
 }
 
-/* Botón de Cerrar */
 #tancar-banner { 
   position: absolute;
   right: 15px;
@@ -282,9 +283,8 @@ body.construction-page p {
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* 📱 Responsive - Estilos Específicos del Banner */
+/* 📱 Responsive */
 @media (max-width: 600px) {
-  /* Estilos Generales Móviles */
   header h1 {
     font-size: 1.8rem;
   }
@@ -295,22 +295,14 @@ body.construction-page p {
   .acte {
     font-size: 1rem;
   }
-  body {
-    padding-top: 55px; /* Espacio para el banner en móvil */
-  }
 
-  /* SOLUCIÓN AL DESBORDAMIENTO: Ajuste del padding */
   #aviso-lluvia {
     font-size: 0.9em;
-    /* Reducimos el padding izquierdo, y usamos el padding derecho para dejar el espacio del botón fijo */
     padding: 10px 35px 10px 10px; 
   }
   
-  .icona { font-size: 1.3em; }
-
-  /* SOLUCIÓN AL DESBORDAMIENTO: Ajuste del botón */
   #tancar-banner {
-    right: 5px; /* Acercamos el botón al borde */
+    right: 5px; 
     width: 25px; 
     height: 25px;
     font-size: 1em;
