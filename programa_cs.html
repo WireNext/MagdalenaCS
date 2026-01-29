@@ -39,7 +39,7 @@
   </section>
 
 <section id="programa">
-  <details open> <summary>📅 Sábado 7 de marzo</summary>
+  <details> <summary>📅 Sábado 7 de marzo</summary>
     <pre>
 <li>🕤 09:30 h | 📍 Recepción de las delegaciones invitadas en la plaza Mayor.</li>
 
@@ -68,7 +68,7 @@
 <li>🕙 22:00 h | 🏮 🎏 Salida de las Gaiatas desde el almacén de las gaiatas.</li>
     </pre>
   </details>
-  <details open> <summary>📅 Domingo 8 de marzo</summary>
+  <details> <summary>📅 Domingo 8 de marzo</summary>
   <pre>
 <li>🕠 05:30 h | 🔔 Tradicional volteo de la campana "Vicent" en la plaza Mayor.</li>
 
@@ -101,7 +101,7 @@
 <li>🕖 19:30 h | 🎆 Desfile de Gaiatas por la calle San Roque.</li>
   </pre>
 </details>
-<details open> <summary>📅 Lunes 9 de marzo</summary>
+<details> <summary>📅 Lunes 9 de marzo</summary>
   <pre>
 <li>🕖 07:00 h | 💥 Despertà por el sector de la Gaiata 18, Crémor.</li>
 
@@ -116,7 +116,7 @@
 <li>🕓 16:30 h | 💐 Ofrenda de la Gaiata 7, Cor de la Ciutat, a la Mare de Déu del Lledó.</li>
   </pre>
 </details>
-<details open> <summary>📅 Martes 10 de marzo</summary>
+<details> <summary>📅 Martes 10 de marzo</summary>
   <pre>
 <li>🕣 08:30 h | 🚛 1ª jornada de la VI Caravana festera hacia la mascletá.</li>
 
@@ -139,7 +139,7 @@
 <li>🕙 22:00 h | 🤪 🎉 💥 Nit Màgica a cargo de Xarxa Teatre, con inicio en la plaza María Agustina.</li>
   </pre>
 </details>
-<details open> <summary>📅 Miércoles 11 de marzo</summary>
+<details> <summary>📅 Miércoles 11 de marzo</summary>
   <pre>
 <li>🕖 07:00 h | 💥 Despertà por el sector de la Gaiata 18, Crémor.</li>
 
@@ -168,7 +168,7 @@
 <li>🕖 19:00 h | 👑 Visita de las Reinas de las fiestas a las diversas collas.</li>
   </pre>
 </details>
-<details open> <summary>📅 Jueves 12 de marzo</summary>
+<details> <summary>📅 Jueves 12 de marzo</summary>
   <pre>
 <li>🕖 07:00 h | 💥 Despertà por el sector de la Gaiata 18, Crémor.</li>
 
@@ -187,7 +187,7 @@
 <li>🕖 19:30 h | 👑 Visita de las Reinas a la Gaiata 17, Tir de Colom.</li>
   </pre>
 </details>
-<details open> <summary>📅 Viernes 13 de marzo</summary>
+<details> <summary>📅 Viernes 13 de marzo</summary>
   <pre>
 <li>🕖 07:00 h | 💥 Despertá de "Tro de bac" por las calles de la ciudad.</li>
 
@@ -212,7 +212,7 @@
 <li>🕗 20:00 h | 👑 Visita de las Reinas a la Gaiata 19, La Cultural.</li>
   </pre>
 </details>
-<details open> <summary>📅 Sábado 14 de marzo</summary>
+<details> <summary>📅 Sábado 14 de marzo</summary>
   <pre>
 <li>🕙 10:00 h | 👑 Visita de las Reinas a la Gaiata 12, El Grau.</li>
 
@@ -227,7 +227,7 @@
 <li>🕖 19:00 h | 🎼 🎷 XXXIV Festival Internacional de Música de Festa en la plaza Mayor.</li>
   </pre>
 </details>
-<details open> <summary>📅 Domingo 15 de marzo</summary>
+<details> <summary>📅 Domingo 15 de marzo</summary>
   <pre>
 <li>🕖 07:00 h | 💥 Despertà por el sector de la Gaiata 18, Crémor.</li>
 
@@ -288,6 +288,31 @@
 
     document.getElementById('tancar-banner').addEventListener('click', function() {
     document.getElementById('aviso-lluvia').style.display = 'none';
+    document.addEventListener("DOMContentLoaded", function() {
+  const hoy = new Date();
+  const diaMes = hoy.getDate();
+  const mes = hoy.getMonth(); // 2 es Marzo
+
+  // Solo actuamos si estamos en Marzo (mes 2)
+  if (mes === 2) {
+    // Obtenemos todos los elementos <details> del programa
+    const secciones = document.querySelectorAll("#programa details");
+    
+    // Mapeo de días de la Magdalena 2026 (del 7 al 15 de marzo)
+    // El índice 0 corresponde al primer <details> (7 de marzo), etc.
+    const diasMagdalena = [7, 8, 9, 10, 11, 12, 13, 14, 15];
+    
+    const indiceDia = diasMagdalena.indexOf(diaMes);
+
+    // Si el día de hoy está en la lista, abrimos ese <details>
+    if (indiceDia !== -1 && secciones[indiceDia]) {
+      secciones[indiceDia].setAttribute("open", "");
+      
+      // Opcional: Desplazar la pantalla suavemente hasta el día abierto
+      secciones[indiceDia].scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
 });
 
   </script>
